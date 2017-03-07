@@ -1,0 +1,54 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeHeLLo}[2013/03/08 HeLLo's beamer color style]
+
+\mode<presentation>
+
+%\definecolor{helloblue}{rgb}{0,0,0.627}
+\definecolor{helloblue}{rgb}{0.027,0.267,0.584}
+\definecolor{hellogreen}{rgb}{0,0.627,0}
+\definecolor{hellored}{rgb}{0.627,0,0}
+%\definecolor{helloorange}{rgb}{1,0.47,0.12}
+%\definecolor{helloorange}{rgb}{1,0.616,0.078}
+%\definecolor{helloorange}{cmyk}{0,0.55,1,0}
+%\definecolor{helloorange}{cmyk}{0,0.73,1,0}
+\definecolor{helloorange}{cmyk}{0,0.6,0.8,0}
+%\definecolor{helloorangelight}{rgb}{1,0.9,0.59}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{text}{fg=black}
+\setbeamercolor{alerted text}{fg=helloorange}
+\setbeamercolor{example text}{fg=hellogreen}
+\setbeamercolor{structure}{fg=helloblue}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{block title}{bg=helloblue,fg=white}
+\setbeamercolor{block body}{bg=helloblue!20,fg=black}
+
+%\setbeamercolor{block title alerted}{bg=hellored,fg=white}
+%\setbeamercolor{block body alerted}{bg=hellored!20,fg=black}
+
+\setbeamercolor{block title alerted}{bg=helloorange,fg=white}
+\setbeamercolor{block body alerted}{bg=helloorange!20,fg=black}
+
+\setbeamercolor{block title example}{bg=hellogreen,fg=white}
+\setbeamercolor{block body example}{bg=hellogreen!20,fg=black}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Structures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{footline}{parent=structure}
+\setbeamercolor{frametitle}{parent=structure}
+
+
+\setbeamercolor{section in head/foot}{fg=white,bg=helloblue}
+\setbeamercolor{subsection in head/foot}{fg=white,bg=helloblue!90}
+%\definecolor{beetle@other}{RGB}{64,80,127}
+%\setbeamercolor*{palette primary}{fg=white,bg=beetle@other}
+%\setbeamercolor*{titlelike}{parent=palette primary}

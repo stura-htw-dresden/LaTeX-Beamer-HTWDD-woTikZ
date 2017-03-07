@@ -1,0 +1,126 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemeHeLLo}[2013/03/08 HeLLo's beamer outer style]
+
+\RequirePackage{probar}
+\RequirePackage{amssymb}
+
+\mode<presentation>
+
+\useoutertheme{default}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamerfont{section in head/foot}{size=\scriptsize}
+\setbeamerfont{subsection in head/foot}{size=\scriptsize}
+
+\newsavebox{\hellologo}	% for frametitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Sidebar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{sidebar right}{%
+	% no logo
+	%\usebeamertemplate***{navigation symbols}%
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Frametitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setbeamertemplate{frametitle}{%
+%	% save the logo to measure size
+%	\sbox{\hellologo}{\usebeamerfont{logo}\usebeamercolor{logo}\insertlogo}%
+%	\begin{beamercolorbox}[wd=\paperwidth,sep=1mm,leftskip=1mm,rightskip=1mm]{frametitle}%
+%		% title and subtitle
+%		\mbox{\parbox{\dimexpr\hsize-\wd\hellologo-1ex-4mm}{%
+%			\noindent\raggedright%
+%				\usebeamercolor{frametitle}%
+%				\usebeamerfont{frametitle}%
+%				\insertframetitle%
+%			\par\noindent\raggedright%
+%				\usebeamercolor{framesubtitle}%
+%				\usebeamerfont{framesubtitle}%
+%				\hspace{3mm}%
+%				\insertframesubtitle%
+%		}%
+%		\hfill
+%		\parbox{\wd\hellologo}{\usebox{\hellologo}}%
+%		}%
+%	\setlength{\baselineskip}{.8pt}%
+%	\linebreak%
+%		{\rule{\dimexpr\hsize-4mm}{.8pt}}%
+%	\end{beamercolorbox}%
+%	}
+
+
+\defbeamertemplate*{headline}{LMK theme}
+{%
+	\vspace*{-1.55em}
+	\leavevmode
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,%
+		leftskip=2mm,rightskip=2mm,dp=1.125ex]{section in head/foot}
+		\insertsectionhead
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,%
+		leftskip=2mm,rightskip=2mm,dp=1.125ex]{subsection in head/foot}
+		\insertsubsectionhead
+	\end{beamercolorbox}
+}
+
+\setbeamertemplate{frametitle}{%
+	% save the logo to measure size
+	\sbox{\hellologo}{\usebeamerfont{logo}\usebeamercolor{logo}\insertlogo}%
+	\begin{beamercolorbox}[wd=\paperwidth,sep=1mm,leftskip=1mm,rightskip=1mm]{frametitle}%
+	\makeatletter
+		\leavevmode\hbox{\hskip-\@wholewidth\vbox{\vskip-\@wholewidth\hbox{%
+			\parbox[t][5mm][t]{\dimexpr\hsize-\wd\hellologo-2mm}{%
+				\noindent\raggedright%
+					\usebeamercolor{frametitle}%
+					\usebeamerfont{frametitle}%
+					\insertframetitle%
+				%\par\noindent\raggedright%
+				%	\usebeamercolor{framesubtitle}%
+				%	\usebeamerfont{framesubtitle}%
+				%	\hspace{3mm}%
+				%	\insertframesubtitle%
+			}%
+		}\vskip-\@wholewidth}\hskip-\@wholewidth}
+		\hfill
+		\leavevmode\hbox{\hskip-\@wholewidth\vbox{\vskip-\@wholewidth\hbox{%
+			\parbox[t][5mm][t]{\wd\hellologo}{\usebox{\hellologo}}%
+		}\vskip-\@wholewidth}\hskip-\@wholewidth}
+	\makeatother
+	\setlength{\baselineskip}{.8pt}%
+	\linebreak%
+		{\rule{\dimexpr\hsize-4mm}{.8pt}}%
+	\end{beamercolorbox}%
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Footline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{%
+	\begin{beamercolorbox}[sep=1mm,leftskip=1mm,rightskip=1mm,wd=\paperwidth]{footline}%
+		\noindent\probar{$\blacktriangle$}{\hsize-4mm}{.8pt}{\insertframenumber}{\inserttotalframenumber}%
+		\vspace{1pt}%
+		\par\noindent%
+		\insertshorttitle%
+		\hfill \insertauthor%
+		\hfill \insertdate%
+		\hfill \insertframenumber/\inserttotalframenumber%
+	\end{beamercolorbox}%
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Old Progressbar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\begin{tikzpicture}%
+%		\useasboundingbox (0,0) rectangle (\hsize-4mm,-5pt-1pt);
+%		\draw[line width=.8pt] (0,0) -- (\hsize-4mm,0);
+%		\ifnum\inserttotalframenumber>1
+%		\fill[xshift=(\hsize - 4mm) / (\inserttotalframenumber - 1) * (\insertframenumber - 1)] (0,0) -- (-2pt,-5pt) -- (2pt,-5pt) -- cycle;
+%		%\if \insertpartstartpage \insertpartendpage
+%		%\else
+%			%\fill[xshift=(\hsize - 4mm) / (\insertpartendpage - \insertpartstartpage) * (\insertpagenumber - \insertpartstartpage)] (0,0) -- (-2pt,-5pt) -- (2pt,-5pt) -- cycle;
+%		%\fi
+%		\fi
+%	\end{tikzpicture}%
